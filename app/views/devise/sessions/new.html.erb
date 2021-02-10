@@ -1,36 +1,36 @@
-<div class="base">
-  <header class="base__head">
-    <h1 class="base__head__main">
-      <a class="base__head__main__link" href="#">
+<div class="signin">
+  <header class="signin__head">
+    <h1 class="signin__head__main">
+      <a class="signin__head__main__link" href="#">
         <%=image_tag "logo.png" %>
       </a>
     </h1>
   </header>
-  <div class="base__main">
-    <div class="base__main__top">
-      <p class="base__main__top__nothing">アカンウントをお持ちでない方はこちら</p>
-      <a class="base__main__top__new" href="#">新規会員登録</a>
+  <div class="signin__main">
+    <div class="signin__main__top">
+      <p class="signin__main__top__nothing">アカンウントをお持ちでない方はこちら</p>
+      <a class="signin__main__top__new" href="#">新規会員登録</a>
     </div>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html:{class:"base__main__bottom"}) do |f| %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", class:"base__main__bottom__address"%>
-      <%= f.password_field :password, autocomplete: "current-password", placeholder:"パスワード", class:"base__main__bottom__pass" %>
-      <%= f.submit "ログイン", class:"base__main__bottom__login" %>
-      <a href="#" class="base__main__bottom__forget">パスワードをお忘れの方</a>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html:{class:"signin__main__bottom"}) do |f| %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", class:"signin__main__bottom__address"%>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder:"パスワード", class:"signin__main__bottom__pass" %>
+      <%= f.submit "ログイン", class:"signin__main__bottom__login" %>
+      <a href="#" class="signin__main__bottom__forget">パスワードをお忘れの方</a>
     <% end %>
   </div>
-  <footer class="base__foot">
-    <ul class="base__foot__top">
-      <li class="base__foot__top__left">
+  <footer class="signin__foot">
+    <ul class="signin__foot__top">
+      <li class="signin__foot__top__left">
         <a href="#">プライバシーポリシー</a>
       </li>
-      <li class="base__foot__top__middle">
+      <li class="signin__foot__top__middle">
         <a href="#">フリマ利用規約</a>
       </li>
-      <li class="base__foot__top__right">
+      <li class="signin__foot__top__right">
         <a href="#">特定商取引に関する表記</a>
       </li>
     </ul>
-    <a class="base__foot__link" href="#">
+    <a class="signin__foot__link" href="#">
       <%= image_tag "logo.png" %>
     </a>
 

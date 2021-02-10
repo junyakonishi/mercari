@@ -7,41 +7,33 @@
     </h1>
   </header>
   <div class="base__main">
-    <%# <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %> %>
-      <div class="base__main__top">
-        <p class="base__main__top__nothing">アカンウントをお持ちでない方はこちら</p>
-        <a class="base__main__top__new" href="#">新規会員登録</a>
-      </div>
-    <form class="base__main__second">
-      
-    </form>
-  </div>
-
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="base__main__second">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="base__main__top">
+      <p class="base__main__top__nothing">アカンウントをお持ちでない方はこちら</p>
+      <a class="base__main__top__new" href="#">新規会員登録</a>
     </div>
-
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
-
-    <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html:{class:"base__main__bottom"}) do |f| %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", class:"base__main__bottom__address"%>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder:"パスワード", class:"base__main__bottom__pass" %>
+      <%= f.submit "ログイン", class:"base__main__bottom__login" %>
+      <a href="#" class="base__main__bottom__forget">パスワードをお忘れの方</a>
     <% end %>
+  </div>
+  <footer class="base__foot">
+    <ul class="base__foot__top">
+      <li class="base__foot__top__left">
+        <a href="#">プライバシーポリシー</a>
+      </li>
+      <li class="base__foot__top__middle">
+        <a href="#">フリマ利用規約</a>
+      </li>
+      <li class="base__foot__top__right">
+        <a href="#">特定商取引に関する表記</a>
+      </li>
+    </ul>
+    <a class="base__foot__link" href="#">
+      <%= image_tag "logo.png" %>
+    </a>
 
-    <div class="actions">
-      <%= f.submit "Log in" %>
-    </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
-
-
-  <footer class="base__footer"></footer>
+    <p>@ FURIMA</p>
+  </footer>
 </div>

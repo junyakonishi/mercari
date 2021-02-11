@@ -95,21 +95,24 @@
       </div>
     <% end %> 
   </main>
-  <footer class="footer__bottom">
-    <a class="footer__bottom__link" href="#">
-      <%= image_tag "logo-white.png" %>
+  <footer class="signin__foot">
+    <ul class="signin__foot__top">
+      <li class="signin__foot__top__left">
+        <a href="#">プライバシーポリシー</a>
+      </li>
+      <li class="signin__foot__top__middle">
+        <a href="#">フリマ利用規約</a>
+      </li>
+      <li class="signin__foot__top__right">
+        <a href="#">特定商取引に関する表記</a>
+      </li>
+    </ul>
+    <a class="signin__foot__link" href="#">
+      <%= image_tag "logo.png" %>
     </a>
-  </div>
-  <p>@ FURIMA</p>
+
+    <p>@ FURIMA</p>
   </footer>
-<a class="listing" href="#">
-  <div class="listing__base">
-    <span class="listing__base__text">
-    出品する
-    </span>
-      <%=image_tag "icon_camera.png" %>
-  </div>
-</a>
 </div>
 
 
@@ -144,4 +147,3 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-

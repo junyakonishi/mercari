@@ -1,1 +1,618 @@
+<header class="header">
+  <div class="header__base">
+    <div class="header__base__top">
+      <h1 class="header__base__top__left">
+        <a class="header__base__top__left__logo" href="#">
+          <%= image_tag "logo.png" %>
+        </a>
+      </h1>
+      <div class="header__base__top__right">
+        <form class="header__base__top__right__box">
+          <input name="name_search" placeholder="キーワードから探す">
+          <label class="header__base__top__right__box__look">
+            <%= image_tag "icon-search 1.png" %>
+        </form>
+      </div>
+    </div>
+    <div class="header__base__bottom">
+      <ul class="header__base__bottom__left">
+        <li class="header__base__bottom__left__category">
+          <a class="header__base__bottom__left__category__link" href="#">
+            <i class="fas fa-list-ul"></i>
+            <span>カテゴリーから探す</span>
+          </a>
+        </li>
+        <li class="header__base__bottom__left__brand">
+          <a class="header__base__bottom__left__brand__link" href="#">
+            <i class="fas fa-tags"></i>
+            <span>ブランドから探す</span>
+          </a>
+      </ul>
+      <ul class="header__base__bottom__right">
+        <li class="header__base__bottom__right__favorite">
+          <a class="header__base__bottom__right__favorite__title" href="#">
+            <span>
+              <i class="fas fa-star"></i>
+            </span>
+              <span>お気に入り一覧</span>
+          </a>
+        </li>
+        <li class="header__base__bottom__right__notice">
+          <a class="header__base__bottom__right__notice__title" href="#">
+            <span>
+              <i class="fas fa-bell"></i>
+            </span>
+              <span>お知らせ</span>
+          </a>
+        </li>
+        <li class="header__base__bottom__right__todo">
+          <a class="header__base__bottom__right__todo__title" href="#">
+            <span>
+              <i class="fas fa-check"></i>
+            </span>
+              <span>やること一覧</span>
+          </a>
+        </li>
+        <li class="header__base__bottom__right__mypage">
+          <a class="header__base__bottom__right__mypage__title" href="#">
+          <span>
+              <i class="fas fa-smile"></i>
+            </span>
+              <span>マイページ</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
+</header>
+<div class="main">
+  <section class="main__first">
+    <div class="main__first__base">
+      <h2 class="main__first__base__top">
+        <br>人生を変えるフリマアプリ
+      </h2>
+      <p class="main__first__base__middle">
+        FURIMAはだれでも簡単に出品・購入ができる
+        <br>
+        フリマアプリです
+      </p>
+      <div class="main__first__base__bottom">
+        <a class="main__first__base__bottom__left">
+          <%= image_tag "app-store.svg" %>
+        </a>
+        <a class="main__first__base__bottom__right">
+           <%= image_tag "app-store.svg" %>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="main__second">
+    <h2 class="main__second__top">
+      FURIMAが選ばれる３つの理由
+    </h2>
+    <ul class="main__second__bottom">
+      <li class="main__second__bottom__left">
+        <div class="main__second__bottom__left__photo">
+          <span>1</span>
+          <%= image_tag "pict-reason-01.jpg" %>
+        </div>
+        <h3 class="main__second__bottom__left__title">
+          <span class="main__second__bottom__left__title__blue">
+          3分
+          </span>
+          ですぐに出品
+        </h3>
+        <div class="main__second__bottom__left__info">
+        スマホで入力するだけで簡単に出品できる！
+        </div>
+      
+      </li>
+      <li class="main__second__bottom__middle">
+        <div class="main__second__bottom__middle__photo">
+          <span>２</span>
+          <%= image_tag "pict-reason-02.jpg" %>
+        </div>
+        <h3 class="main__second__bottom__middle__title">
+          <span class="main__second__bottom__middle__title__blue">
+          シンプル
+          </span>
+          で使いやすい
+        </h3>
+        <div class="main__second__bottom__middle__info">
+        めんどくさい入力は必要なく、検索も購入もスムーズ！
+        </div>
+      </li>
+
+      <li class="main__second__bottom__right">
+        <div class="main__second__bottom__right__photo">
+          <span class="main__second__bottom__right__photo__number">
+          ３
+          </span>
+          <%= image_tag "pict-reason-03.jpg" %>
+        </div>
+        <h3 class="main__second__bottom__right__title">
+          <span class="main__second__bottom__right__title__blue">
+          手数料
+          </span>
+          業界最安
+        </h3>
+        <div class="main__second__bottom__right__info">
+        10％でお得に出品＆購入！
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="main__third">
+    <div class="main__third__base">
+      <h2 class="main__third__base__top">
+      会員数日本一位
+      </h2>
+      <p class="main__third__base__middle">
+      FURIMAは、フリマアプリで最も人気。
+      <br>
+      出店・購入回数も業界最多です！
+      <br>
+      欲しかったあの商品に出会えるかもしれません
+      </p>
+      <div class="main__third__base__bottom">
+        <a class="main__third__base__bottom__left">
+          <%= image_tag "app-store.svg" %>
+        </a>
+        <a class="main__third__base__bottom__right">
+          <%= image_tag "app-store.svg" %>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="main__forth">
+    <h2 class="main__forth__top">
+    FURIMAの特徴
+    </h2>
+    <div class="main__forth__bottom">
+      <section class="main__forth__bottom__left">
+        <figure class="main__forth__bottom__left__photo">
+          <%= image_tag "icon-01.png" %>
+        </figure>
+        <h3 class="main__forth__bottom__left__title">
+        簡単に売り買いできる
+        </h3>
+        <p class="main__forth__bottom__left__info">
+        スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+        </p>
+      </section>
+      <section class="main__forth__bottom__middle">
+        <figure class="main__forth__bottom__middle__photo">
+          <%= image_tag "icon-03.png" %>
+        </figure>
+        <h3 class="main__forth__bottom__middle__title">
+        売上金は即日振込に対応
+        </h3>
+        <p class="main__forth__bottom__middle__info">
+        午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
+        </p>      
+      </section>
+      <section class="main__forth__bottom__right">
+        <figure class="main__forth__bottom__right__photo">
+          <%= image_tag "icon-04.png" %>
+        </figure>
+        <h3 class="main__forth__bottom__right__title">
+        様々な支払いに対応
+        </h3>
+        <p class="main__forth__bottom__right__info">
+        お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+        </p>
+      </section>
+    </div>
+  </section>
+  
+  <section class="main__fifth">
+    <h2 class="main__fifth__top">
+    ピックアップカテゴリー
+    </h2>
+    <div class="main__fifth__bottom">
+      <div class="main__fifth__bottom__title">
+        <a href="#" class="main__fifth__bottom__title__link">
+          <h3 class="main__fifth__bottom__title__link__figure">
+          新規投稿商品
+          </h3>
+        </a>
+      </div>
+      <div class="main__fifth__bottom__items">
+        <div class="main__fifth__bottom__items__one">
+          <a href="#"class="main__fifth__bottom__items__one__link">
+            <figure class="main__fifth__bottom__items__one__link__photo">
+              <%= image_tag "商品詳細.png" %>
+            </figure>
+            <div class="main__fifth__bottom__items__one__link__details">
+              <h3 class="main__fifth__bottom__items__one__link__details__title">
+              城
+              </h3>
+              <div class="main__fifth__bottom__items__one__link__details__value">
+                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
+                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
+                  9,999,999円
+                  </li>
+                  <li class="main__fifth__bottom__items__one__link__details__value__count">
+                    <i class="fab fa-apple"></i>
+                    0
+                  </li>
+                </ul>
+                <p class="main__fifth__bottom__items__one__link__details__value__tax">
+                （税込）
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="main__fifth__bottom__items__one">
+          <a href="#"class="main__fifth__bottom__items__one__link">
+            <figure class="main__fifth__bottom__items__one__link__photo">
+              <%= image_tag "商品詳細.png" %>
+            </figure>
+            <div class="main__fifth__bottom__items__one__link__details">
+              <h3 class="main__fifth__bottom__items__one__link__details__title">
+              城
+              </h3>
+              <div class="main__fifth__bottom__items__one__link__details__value">
+                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
+                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
+                  9,999,999円
+                  </li>
+                  <li class="main__fifth__bottom__items__one__link__details__value__count">
+                    <i class="fab fa-apple"></i>
+                    0
+                  </li>
+                </ul>
+                <p class="main__fifth__bottom__items__one__link__details__value__tax">
+                （税込）
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="main__fifth__bottom__items__one">
+          <a href="#"class="main__fifth__bottom__items__one__link">
+            <figure class="main__fifth__bottom__items__one__link__photo">
+              <%= image_tag "商品詳細.png" %>
+            </figure>
+            <div class="main__fifth__bottom__items__one__link__details">
+              <h3 class="main__fifth__bottom__items__one__link__details__title">
+              城
+              </h3>
+              <div class="main__fifth__bottom__items__one__link__details__value">
+                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
+                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
+                  9,999,999円
+                  </li>
+                  <li class="main__fifth__bottom__items__one__link__details__value__count">
+                    <i class="fab fa-apple"></i>
+                    0
+                  </li>
+                </ul>
+                <p class="main__fifth__bottom__items__one__link__details__value__tax">
+                （税込）
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="main__fifth__bottom__items__one">
+          <a href="#"class="main__fifth__bottom__items__one__link">
+            <figure class="main__fifth__bottom__items__one__link__photo">
+              <%= image_tag "商品詳細.png" %>
+            </figure>
+            <div class="main__fifth__bottom__items__one__link__details">
+              <h3 class="main__fifth__bottom__items__one__link__details__title">
+              城
+              </h3>
+              <div class="main__fifth__bottom__items__one__link__details__value">
+                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
+                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
+                  9,999,999円
+                  </li>
+                  <li class="main__fifth__bottom__items__one__link__details__value__count">
+                    <i class="fab fa-apple"></i>
+                    0
+                  </li>
+                </ul>
+                <p class="main__fifth__bottom__items__one__link__details__value__tax">
+                （税込）
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="main__fifth__bottom__items__one">
+          <a href="#"class="main__fifth__bottom__items__one__link">
+            <figure class="main__fifth__bottom__items__one__link__photo">
+              <%= image_tag "商品詳細.png" %>
+            </figure>
+            <div class="main__fifth__bottom__items__one__link__details">
+              <h3 class="main__fifth__bottom__items__one__link__details__title">
+              城
+              </h3>
+              <div class="main__fifth__bottom__items__one__link__details__value">
+                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
+                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
+                  9,999,999円
+                  </li>
+                  <li class="main__fifth__bottom__items__one__link__details__value__count">
+                    <i class="fab fa-apple"></i>
+                    0
+                  </li>
+                </ul>
+                <p class="main__fifth__bottom__items__one__link__details__value__tax">
+                （税込）
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="main__fifth__bottom__items__one">
+          <a href="#"class="main__fifth__bottom__items__one__link">
+            <figure class="main__fifth__bottom__items__one__link__photo">
+              <%= image_tag "商品詳細.png" %>
+            </figure>
+            <div class="main__fifth__bottom__items__one__link__details">
+              <h3 class="main__fifth__bottom__items__one__link__details__title">
+              城
+              </h3>
+              <div class="main__fifth__bottom__items__one__link__details__value">
+                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
+                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
+                  9,999,999円
+                  </li>
+                  <li class="main__fifth__bottom__items__one__link__details__value__count">
+                    <i class="fab fa-apple"></i>
+                    0
+                  </li>
+                </ul>
+                <p class="main__fifth__bottom__items__one__link__details__value__tax">
+                （税込）
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="main__fifth__bottom__items__one">
+          <a href="#"class="main__fifth__bottom__items__one__link">
+            <figure class="main__fifth__bottom__items__one__link__photo">
+              <%= image_tag "商品詳細.png" %>
+            </figure>
+            <div class="main__fifth__bottom__items__one__link__details">
+              <h3 class="main__fifth__bottom__items__one__link__details__title">
+              城
+              </h3>
+              <div class="main__fifth__bottom__items__one__link__details__value">
+                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
+                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
+                  9,999,999円
+                  </li>
+                  <li class="main__fifth__bottom__items__one__link__details__value__count">
+                    <i class="fab fa-apple"></i>
+                    0
+                  </li>
+                </ul>
+                <p class="main__fifth__bottom__items__one__link__details__value__tax">
+                （税込）
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="main__fifth__bottom__items__one">
+          <a href="#"class="main__fifth__bottom__items__one__link">
+            <figure class="main__fifth__bottom__items__one__link__photo">
+              <%= image_tag "商品詳細.png" %>
+            </figure>
+            <div class="main__fifth__bottom__items__one__link__details">
+              <h3 class="main__fifth__bottom__items__one__link__details__title">
+              城
+              </h3>
+              <div class="main__fifth__bottom__items__one__link__details__value">
+                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
+                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
+                  9,999,999円
+                  </li>
+                  <li class="main__fifth__bottom__items__one__link__details__value__count">
+                    <i class="fab fa-apple"></i>
+                    0
+                  </li>
+                </ul>
+                <p class="main__fifth__bottom__items__one__link__details__value__tax">
+                （税込）
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="main__fifth__bottom__items__one">
+          <a href="#"class="main__fifth__bottom__items__one__link">
+            <figure class="main__fifth__bottom__items__one__link__photo">
+              <%= image_tag "商品詳細.png" %>
+            </figure>
+            <div class="main__fifth__bottom__items__one__link__details">
+              <h3 class="main__fifth__bottom__items__one__link__details__title">
+              城
+              </h3>
+              <div class="main__fifth__bottom__items__one__link__details__value">
+                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
+                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
+                  9,999,999円
+                  </li>
+                  <li class="main__fifth__bottom__items__one__link__details__value__count">
+                    <i class="fab fa-apple"></i>
+                    0
+                  </li>
+                </ul>
+                <p class="main__fifth__bottom__items__one__link__details__value__tax">
+                （税込）
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="main__fifth__bottom__items__one">
+          <a href="#"class="main__fifth__bottom__items__one__link">
+            <figure class="main__fifth__bottom__items__one__link__photo">
+              <%= image_tag "商品詳細.png" %>
+            </figure>
+            <div class="main__fifth__bottom__items__one__link__details">
+              <h3 class="main__fifth__bottom__items__one__link__details__title">
+              城
+              </h3>
+              <div class="main__fifth__bottom__items__one__link__details__value">
+                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
+                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
+                  9,999,999円
+                  </li>
+                  <li class="main__fifth__bottom__items__one__link__details__value__count">
+                    <i class="fab fa-apple"></i>
+                    0
+                  </li>
+                </ul>
+                <p class="main__fifth__bottom__items__one__link__details__value__tax">
+                （税込）
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>  
+  </section>
+  
+  <section class="main__sixth">
+    <h2 class="main__sixth__top">
+    ピックアップブランド
+    </h2>
+    <div class="main__sixth__bottom">
+      <div class="main__sixth__bottom__title">
+        <a href="#" class="main__sixth__bottom__title__link">
+          <h3 class="main__sixth__bottom__title__link__figure">
+          アーカイバ
+          </h3>
+        </a>
+      </div>
+      <div class="main__sixth__bottom__items">
+        <div class="main__sixth__bottom__items__one">
+          <a href="#"class="main__fifth__bottom__items__one__link">
+            <figure class="main__fifth__bottom__items__one__link__photo">
+              <%= image_tag "商品詳細.png" %>
+            </figure>
+            <div class="main__fifth__bottom__items__one__link__details">
+              <h3 class="main__fifth__bottom__items__one__link__details__title">
+              城
+              </h3>
+              <div class="main__fifth__bottom__items__one__link__details__value">
+                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
+                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
+                  9,999,999円
+                  </li>
+                  <li class="main__fifth__bottom__items__one__link__details__value__count">
+                    <i class="fab fa-apple"></i>
+                    0
+                  </li>
+                </ul>
+                <p class="main__fifth__bottom__items__one__link__details__value__tax">
+                （税込）
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="bottom">
+  <div class="bottom__main">
+    <h2 class="bottom__main__top">
+    だれでもかんたん、人生を変えるフリマアプリ
+    </h2>
+    <p class="bottom__main__middle">
+    今すぐ無料ダウンロード！
+    </p>
+    <div class="bottom__main__bottom">
+      <a class="bottom__main__bottom__left">
+        <%= image_tag "app-store.svg" %>
+      </a>
+      <a class="bottom__main__bottom__right">
+        <%= image_tag "app-store.svg" %>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <ul class="footer__top">
+    <li class="footer__top__left">
+      <h2 class="footer__top__left__title">
+      FURIMAについて
+      </h2>
+      <ul class="footer__top__left__list">
+        <li class="footer__top__left__list__one">
+          <a href="#">会社概要（運営会社）</a>
+        </li>
+        <li class="footer__top__left__list__two">
+          <a href="#">プライバシーポリシー</a>
+        </li>
+        <li class="footer__top__left__list__three">
+          <a href="#">FURIMA利用規制</a>
+        </li>
+        <li class="footer__top__left__list__four">
+          <a href="#">ポイントに関する特約</a>
+        </li>
+      </ul>
+    </li>
+    <li class="footer__top__middle">
+      <h2 class="footer__top__middle__title">
+      FURIMAを見る
+      </h2>
+      <ul class="footer__top__middle__list">
+        <li class="footer__top__middle__list__one">
+          <a href="#">カテゴリー一覧</a>
+        </li>
+        <li class="footer__top__middle__list__two">
+          <a href="#">ブランド一覧</a>
+        </li>
+      </ul>
+    </li>
+    <li class="footer__top__right">
+      <h2 class="footer__top__right__title">
+      ヘルプ＆ガイド
+      </h2>
+      <ul class="footer__top__right__list">
+        <li class="footer__top__right__list__one">
+          <a href="#">FURIMAガイド</a>
+        </li>
+        <li class="footer__top__right__list__two">
+          <a href="#">FURIMAロゴ利用ガイドライン</a>
+        </li>
+        <li class="footer__top__right__list__three">
+          <a href="#">お知らせ</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <footer class="footer__bottom">
+    <a class="footer__bottom__link" href="#">
+      <%= image_tag "logo-white.png" %>
+    </a>
+  </div>
+  <p>@ FURIMA</p>
+  </footer>
+<a class="listing" href="#">
+  <div class="listing__base">
+    <span class="listing__base__text">
+    出品する
+    </span>
+      <%=image_tag "icon_camera.png" %>
+  </div>
+</a>
+</div>

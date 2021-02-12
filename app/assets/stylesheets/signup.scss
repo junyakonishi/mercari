@@ -169,17 +169,21 @@
           background-color: #EA352D;
           vertical-align: top;
         }
-        &__kanji {
-          margin-right: 7.5px;
-          width: calc(50% - 6px);
-          height: 48px;
-          padding: 10px 16px 8px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          background-color: $bg-clr;
-          line-height: 1.5px;
-          font-size: 16px;
-          margin-top: 8px;
+        &__box {
+          width: 100%;
+          display: flex;
+          &__kanji {
+            margin-right: 7.5px;
+            width: calc(50% - 6px);
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background-color: $bg-clr;
+            line-height: 1.5px;
+            font-size: 16px;
+            margin-top: 8px;
+          }
         }
       }
       &__birthday {
@@ -198,10 +202,19 @@
         }
         &__detail {
           margin-top: 8px;
-          height: 48px;
           width: 100%;
-          border: 1px solid #ccc;
-          border-radius: 4px;
+          display: flex;
+          &__year {
+            height: 48px;
+            width: calc((100% - 48px) / 3);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+          &__nen {
+            height: 48px;
+            width: 16px;
+            line-height: 48px;
+          }
         }
         &__attention {
           margin-top: 8px;

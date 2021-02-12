@@ -42,19 +42,29 @@
       <div class="signup__main__info__name">
         <%= f.label :お名前（全角） %>
         <span>必須</span>
-        <input class="signup__main__info__name__kanji" required="required" placeholder="例）香川" type="text">
-        <input class="signup__main__info__name__kanji" required="required" placeholder="例）太郎" type="text">
+        <div class="signup__main__info__name__box">
+          <input class="signup__main__info__name__box__kanji" required="required" placeholder="例）香川" type="text">
+          <input class="signup__main__info__name__box__kanji" required="required" placeholder="例）太郎" type="text">
+        </div>
       </div>
       <div class="signup__main__info__name">
         <%= f.label :お名前カナ（全角） %>
         <span>必須</span>
-        <input class="signup__main__info__name__kanji" required="required" placeholder="例）カガワ" type="text">
-        <input class="signup__main__info__name__kanji" required="required" placeholder="例）タロウ" type="text">
+        <div class="signup__main__info__name__box">
+          <input class="signup__main__info__name__box__kanji" required="required" placeholder="例）香川" type="text">
+          <input class="signup__main__info__name__box__kanji" required="required" placeholder="例）太郎" type="text">
+        </div>
       </div>
       <div class="signup__main__info__birthday">
         <%= f.label :生年月日 %>
         <span>必須</span>
         <div class="signup__main__info__birthday__detail">
+          <select class="signup__main__info__birthday__detail__year"></select>
+          <div class="signup__main__info__birthday__detail__nen">年</div>
+          <select class="signup__main__info__birthday__detail__year"></select>
+          <div class="signup__main__info__birthday__detail__nen">月</div>
+          <select class="signup__main__info__birthday__detail__year"></select>
+          <div class="signup__main__info__birthday__detail__nen">日</div>
         </div>
         <p class="signup__main__info__birthday__attention">
         ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。

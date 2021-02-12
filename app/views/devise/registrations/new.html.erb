@@ -1,29 +1,128 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="signup">
+  <header class="signup__head">
+    <h1 class="signup__head__main">
+      <a class="signup__head__main__link" href="#">
+        <%=image_tag "logo.png" %>
+      </a>
+    </h1>
+  </header>
+  <main class="signup__main">
+    <h2 class="signup__main__title">会員情報入力</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html:{class: "signup__main__info"}) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="signup__main__info__nickname">
+        <%= f.label :ニックネーム %>
+        <span>必須</span>
+        <%= f.email_field :email, autofocus: true, placeholder: "例）フリマ太郎" %>
+      </div>
+      <div class="signup__main__info__mailadd">
+        <%= f.label :メールアドレス %>
+        <span>必須</span>
+        <%= f.email_field :email, autofocus: true, placeholder: "PC・携帯どちらでも可" %>
+      </div>
+      <div class="signup__main__info__pass">
+        <%= f.label :パスワード %>
+        <span>必須</span>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "６文字以上の半角英数字" %>
+      </div>
+      <div class="signup__main__info__confirm">
+        <%= f.label :パスワード %>
+        <span>必須</span>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "上記と同じものを入力してください" %>
+      </div>
+      <div class="signup__main__info__check">
+        <h3 class="signup__main__info__check__title">本人確認</h3>
+        <p class="signup__main__info__check__text">
+        安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        </p>
+      </div>
+      <div class="signup__main__info__name">
+        <%= f.label :お名前（全角） %>
+        <span>必須</span>
+        <div class="signup__main__info__name__box">
+          <input class="signup__main__info__name__box__kanji" required="required" placeholder="例）香川" type="text">
+          <input class="signup__main__info__name__box__kanji" required="required" placeholder="例）太郎" type="text">
+        </div>
+      </div>
+      <div class="signup__main__info__name">
+        <%= f.label :お名前カナ（全角） %>
+        <span>必須</span>
+        <div class="signup__main__info__name__box">
+          <input class="signup__main__info__name__box__kanji" required="required" placeholder="例）香川" type="text">
+          <input class="signup__main__info__name__box__kanji" required="required" placeholder="例）太郎" type="text">
+        </div>
+      </div>
+      <div class="signup__main__info__birthday">
+        <%= f.label :生年月日 %>
+        <span>必須</span>
+        <div class="signup__main__info__birthday__detail">
+          <select class="signup__main__info__birthday__detail__year"></select>
+          <div class="signup__main__info__birthday__detail__nen">年</div>
+          <select class="signup__main__info__birthday__detail__year"></select>
+          <div class="signup__main__info__birthday__detail__nen">月</div>
+          <select class="signup__main__info__birthday__detail__year"></select>
+          <div class="signup__main__info__birthday__detail__nen">日</div>
+        </div>
+        <p class="signup__main__info__birthday__attention">
+        ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        </p>
+      </div>
+      <h3 class="signup__main__info__deliverytitle">
+      配送先住所
+      </h3>
+      <div class="signup__main__info__delivery">
+        <%= f.label :郵便番号 %>
+        <span>必須</span>
+        <%= f.email_field :email, autofocus: true, placeholder: "例）760ー0019" %>
+      </div>
+      <div class="signup__main__info__delivery">
+        <%= f.label :都道府県 %>
+        <span>必須</span>
+        <%= f.email_field :email, autofocus: true, placeholder: "選択してください" %>
+      </div>
+      <div class="signup__main__info__delivery">
+        <%= f.label :市区町村 %>
+        <span>必須</span>
+        <%= f.email_field :email, autofocus: true, placeholder: "例）高松市" %>
+      </div>
+      <div class="signup__main__info__delivery">
+        <%= f.label :番地 %>
+        <span>必須</span>
+        <%= f.email_field :email, autofocus: true, placeholder: "例）サンポート2-1" %>
+      </div>
+      <div class="signup__main__info__delivery">
+        <%= f.label :建物名 %>
+        <span>必須</span>
+        <%= f.email_field :email, autofocus: true, placeholder: "例）高松シンボルタワー棟" %>
+      </div>
+      <div class="signup__main__info__delivery">
+        <%= f.label :電話番号 %>
+        <span>必須</span>
+        <%= f.email_field :email, autofocus: true, placeholder: "例）0878220111" %>
+      </div>
+      <div class="signup__main__info__submit">
+        <%= f.submit "登録する" %>
+      </div>
+    <% end %> 
+  </main>
+  <footer class="signup__foot">
+    <ul class="signup__foot__top">
+      <li class="signup__foot__top__left">
+        <a href="#">プライバシーポリシー</a>
+      </li>
+      <li class="signup__foot__top__middle">
+        <a href="#">フリマ利用規約</a>
+      </li>
+      <li class="signup__foot__top__right">
+        <a href="#">特定商取引に関する表記</a>
+      </li>
+    </ul>
+    <a class="signup__foot__link" href="#">
+      <%= image_tag "logo.png" %>
+    </a>
+    <p>@ FURIMA</p>
+  </footer>
+</div>

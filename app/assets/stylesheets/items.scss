@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-.base {
+.bases {
   height: 2558px;
   width: 100%;
   color:black;
@@ -56,12 +56,31 @@
           margin-top: 16px;
           background-color: rgb(245, 245, 245);
           border: 1px dashed rgb(204, 204, 204);
-          flex-wrap: wrap;
-          &__text {
-            height: 32px;
-            font-size: 14px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &__up {
+            height: 44px;
+            width: 100%;
+            font-size: 20px;
             text-align: center;
-            padding: 60px 0 25px 0;
+            &__icon {
+              top: 10px;
+              right: 10px;
+              cursor: pointer;
+            }
+            &__file {
+              display: none;
+            }
+            &__text {
+              height: 16px;
+              width: 100%;
+              font-size: 12px;
+              // height: 32px;
+              // font-size: 14px;
+              // text-align: center;
+              // padding: 60px 0 25px 0;
+            }
           }
         }
       }
@@ -172,39 +191,6 @@
           height: 16px;
           width: 32px;
           background-color: #ff0221;
-          color: #fff;
-          margin-left: 8px;
-          font-size: 12px;
-          padding: 1px 4px;
-          border-radius: 2px;
-          font-weight: 600;
-          line-height: 1.4em;
-        }
-        &__text {
-          height: 48px;
-          width: 100%;
-          padding: 0px 16px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          margin-top: 16px;
-          font-size: inherit;
-        }
-      }
-      &__middle {
-        height: 83px;
-        width: 100%;
-        margin-top: 32px;
-        &__title {
-          height: 19px;
-          width: 56px;
-          font-size: 14px;
-          font-weight: 600;
-          line-height: 1.4em;
-        }
-        &__mark {
-          height: 16px;
-          width: 32px;
-          background-color: #BFBFBF;
           color: #fff;
           margin-left: 8px;
           font-size: 12px;
@@ -418,6 +404,7 @@
             height: 48px;
             width: 285px;
             padding: 0px 16px;
+            text-align: right;
           }
         }
       }
@@ -464,8 +451,8 @@
       &__submit {
         height: 48px;
         width: 360px;
-        background-color: #EA352D;
-        border: 1px solid #EA352D;
+        background-color: $main-clr;
+        border: 1px solid $main-clr;
         padding: 10px 24px;
         color: #fff;
         font-size: 17px;

@@ -1,95 +1,90 @@
-<div class="base">
-  <div class="base__header"></div>
-  <form action="#" class="base__main">
-    <div class="base__main__first">
-      <div class="base__main__first__top">
-        <label class="base__main__first__top__title">出品画像</label>
-        <span class="base__main__first__top__mark">必須</span>
-        <p class="base__main__first__top__info">最大１０枚までアップロードできます</p>
-        <div class="base__main__first__top__upload">
-          <p class="base__main__first__top__upload__text">ドラックアンドドロップ<br>またはクリックしてファイルをアップロード</p>
+<div class="bases">
+  <div class="bases__header"></div>
+  <%= form_with model: @item, html: {class:"bases__main"}, local: true do |f| %>
+    <div class="bases__main__first">
+      <div class="bases__main__first__top">
+        <label class="bases__main__first__top__title">出品画像</label>
+        <span class="bases__main__first__top__mark">必須</span>
+        <p class="bases__main__first__top__info">最大１０枚までアップロードできます</p>
+        <div class="bases__main__first__top__upload">
+          <%= f.label :image, class:'bases__main__first__top__upload__up' do %>
+            <%= icon('fas', 'camera', class:'bases__main__first__top__upload__up__icon') %>
+            <%= f.file_field :image, class:'bases__main__first__top__upload__up__file' %>
+            <p class="bases__main__first__top__upload__up__text">クリックしてファイルをアップロード</p>
+          <% end %>
         </div>
       </div> 
     </div>
-    <div class="base__main__second">
-      <div class="base__main__second__top">
-        <label class="base__main__second__top__title">商品名</label>
-        <span class="base__main__second__top__mark">必須</span>
-        <input class="base__main__second__top__text" type="text" name="name"placeholder="４０文字まで">
+    <div class="bases__main__second">
+      <div class="bases__main__second__top">
+        <label class="bases__main__second__top__title">商品名</label>
+        <span class="bases__main__second__top__mark">必須</span>
+        <%= f.text_field :name, class: "bases__main__second__top__text", placeholder: "４０文字まで" %>
       </div>
-      <div class="base__main__second__middle">
-        <label class="base__main__second__middle__title">商品名</label>
-        <span class="base__main__second__middle__mark">必須</span>
-        <textarea class="base__main__second__middle__text" name="discription" rows="7"
-        placeholder="商品の説明（必須1,000文字以内）
-        （色、素材、重さ、定価、注意点など）
-
-        例）2010年頃に1万円で購入したジャケットです。タイトグレーでは傷はありません。合わせやすいのでおすすめです。"></textarea>
-      <p class="base__main__second__bottom">0/1000</p>
+      <div class="bases__main__second__middle">
+        <label class="bases__main__second__middle__title">商品の説明</label>
+        <span class="bases__main__second__middle__mark">必須</span>
+        <%= f.text_area :info, class: "bases__main__second__middle__text", rows:"7", maxlength:"1000", placeholder: "商品の説明（必須1,000文字以内）色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。タイトグレーでは傷はありません。合わせやすいのでおすすめです。".html_safe %>
+      <p class="bases__main__second__bottom">0/1000</p>
       </div>
     </div>
-    <div class="base__main__third">
-      <p class="base__main__third__about">商品の詳細</p>
-      <div class="base__main__third__top">
-        <label class="base__main__third__top__title">カテゴリー</label>
-        <span class="base__main__third__top__mark">必須</span>
-        <input class="base__main__third__top__text" type="text" name="name"placeholder="選択してください">
+    <div class="bases__main__third">
+      <p class="bases__main__third__about">商品の詳細</p>
+      <div class="bases__main__third__top">
+        <label class="bases__main__third__top__title">カテゴリー</label>
+        <span class="bases__main__third__top__mark">必須</span>
+        <%= f.collection_select :category_id, Category.roots, :id, :name,{include_blank: "---"},{class:"bases__main__third__top__text"} %>
       </div>
-      <div class="base__main__third__middle">
-        <label class="base__main__third__middle__title">ブランド</label>
-        <span class="base__main__third__middle__mark">必須</span>
-        <input class="base__main__third__middle__text" type="text" name="name"placeholder="例）シャネル">
-      </div>
-      <div class="base__main__third__bottom">
-        <label class="base__main__third__bottom__title">商品の状態</label>
-        <span class="base__main__third__bottom__mark">必須</span>
-        <input class="base__main__third__bottom__text" type="text" name="name"placeholder="選択してください">
+      <div class="bases__main__third__bottom">
+        <label class="bases__main__third__bottom__title">商品の状態</label>
+        <span class="bases__main__third__bottom__mark">必須</span>
+        <%= f.collection_select :status_id, Status.all, :id, :name,{include_blank: "選択してください"},{class:"bases__main__third__bottom__text"} %>
       </div>
     </div>
-    <div class="base__main__forth">
-      <p class="base__main__forth__about">配送について</p>
-      <div class="base__main__forth__top">
-        <label class="base__main__forth__top__title">発送料の負担</label>
-        <span class="base__main__forth__top__mark">必須</span>
-        <input class="base__main__forth__top__text" type="text" name="name"placeholder="選択してください">
+    <div class="bases__main__forth">
+      <p class="bases__main__forth__about">配送について</p>
+      <div class="bases__main__forth__top">
+        <label class="bases__main__forth__top__title">発送料の負担</label>
+        <span class="bases__main__forth__top__mark">必須</span>
+        <%= f.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name,{include_blank: "選択してください"},{class:"bases__main__forth__top__text"} %>
       </div>
-      <div class="base__main__forth__middle">
-        <label class="base__main__forth__middle__title">発送元の地域</label>
-        <span class="base__main__forth__middle__mark">必須</span>
-        <input class="base__main__forth__middle__text" type="text" name="name"placeholder="選択してください">
+      <div class="bases__main__forth__middle">
+        <label class="bases__main__forth__middle__title">発送元の地域</label>
+        <span class="bases__main__forth__middle__mark">必須</span>
+        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name,{include_blank:"選択してください"},{class: "bases__main__forth__middle__text"} %>
       </div>
-      <div class="base__main__forth__bottom">
-        <label class="base__main__forth__bottom__title">発送までの日数</label>
-        <span class="base__main__forth__bottom__mark">必須</span>
-        <input class="base__main__forth__bottom__text" type="text" name="name"placeholder="選択してください">
+      <div class="bases__main__forth__bottom">
+        <label class="bases__main__forth__bottom__title">発送までの日数</label>
+        <span class="bases__main__forth__bottom__mark">必須</span>
+        <%= f.collection_select :delivery_days_id, DeliveryDays.all, :id, :name,{include_blank:"選択してください"},{class:"bases__main__forth__bottom__text"} %>
       </div>
     </div>
-    <div class="base__main__fifth">
-      <p class="base__main__fifth__about">価格（￥300〜9,999,999）</p>
-      <div class="base__main__fifth__top">
-        <div class="base__main__fifith__top__box">
-          <label class="base__main__fifth__top__box__title">販売価格</label>
-          <span class="base__main__fifth__top__box__mark">必須</span>
+    <div class="bases__main__fifth">
+      <p class="bases__main__fifth__about">価格（￥300〜9,999,999）</p>
+      <div class="bases__main__fifth__top">
+        <div class="bases__main__fifith__top__box">
+          <label class="bases__main__fifth__top__box__title">販売価格</label>
+          <span class="bases__main__fifth__top__box__mark">必須</span>
         </div>
-        <div class="base__main__fifith__top__box2">
-          <input class="base__main__fifth__top__box2__text" type="text" name="name"placeholder="0">
+        <div class="bases__main__fifith__top__box2">
+          <%= f.text_field :price, class:"bases__main__fifth__top__box2__text", placeholder:"0" %>
         </div>
       </div>
-      <div class="base__main__fifth__middle">
-        <label class="base__main__fifth__middle__fee">販売手数料（１０％）</label>
-        <span class="base__main__fifth__middle__mark">ー</span>
+      <div class="bases__main__fifth__middle">
+        <label class="bases__main__fifth__middle__fee">販売手数料（１０％）</label>
+        <span class="bases__main__fifth__middle__mark">ー</span>
       </div>
-      <div class="base__main__fifth__bottom">
-        <label class="base__main__fifth__bottom__fee">販売利益</label>
-        <span class="base__main__fifth__bottom__mark">ー</span>
+      <div class="bases__main__fifth__bottom">
+        <label class="bases__main__fifth__bottom__fee">販売利益</label>
+        <span class="bases__main__fifth__bottom__mark">ー</span>
       </div>
     </div>
-    <div class="base__main__sixth">
-      <div class="base__main__sixth__submit">出品する</div>
-      <div class="base__main__sixth__button">下書きに保存</div>
-      <div class="base__main__sixth__return">もどる</div>
+    <div class="bases__main__sixth">
+      <%= f.submit "出品する", class: "bases__main__sixth__submit" %>
+      <div class="bases__main__sixth__button">下書きに保存</div>
+      <div class="bases__main__sixth__return">もどる</div>
     </div>
-    <div class="base__main__seventh">禁止されている 行為 および 出品物 を必ずご確認ください。 偽ブランド品 や 盗品物 などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして 加盟店規約 に同意したことになります。</div>
-  </form>
-  <div class="base__footer"></div>
+    <div class="bases__main__seventh">禁止されている 行為 および 出品物 を必ずご確認ください。 偽ブランド品 や 盗品物 などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして 加盟店規約 に同意したことになります。</div>
+  <% end %>
+  <div class="bases__footer"></div>
 </div>

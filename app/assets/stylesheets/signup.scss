@@ -201,19 +201,25 @@
           vertical-align: top;
         }
         &__detail {
-          margin-top: 8px;
-          width: 100%;
+          margin-top: 8px; 
           display: flex;
-          &__year {
-            height: 48px;
-            width: calc((100% - 48px) / 3);
+          font-size: 14px;
+          line-height: 48px;
+          height: 48px;
+          #user_birthday_1i {
+            width: 100px;
             border: 1px solid #ccc;
             border-radius: 4px;
           }
-          &__nen {
-            height: 48px;
-            width: 16px;
-            line-height: 48px;
+          #user_birthday_2i {
+            width: 100px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+          #user_birthday_3i {
+            width: 100px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
           }
         }
         &__attention {
@@ -240,6 +246,15 @@
           font-size: 12px;
           background-color: #EA352D;
           vertical-align: top;
+        }
+        select {
+          width: 343px;
+          height: 48px;
+          display: flex;
+          margin: 8px 0 0;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          padding: 10px 16px 8px;
         }
         input {
           height: 48px;

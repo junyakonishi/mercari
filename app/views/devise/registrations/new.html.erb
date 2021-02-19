@@ -13,12 +13,12 @@
       <div class="signup__main__info__nickname">
         <%= f.label :ニックネーム %>
         <span>必須</span>
-        <%= f.email_field :email, autofocus: true, placeholder: "例）フリマ太郎" %>
+        <%= f.text_field :nick_name, autofocus: true, autocomplete: "nickname", placeholder: "例）フリマ太郎" %>
       </div>
       <div class="signup__main__info__mailadd">
         <%= f.label :メールアドレス %>
         <span>必須</span>
-        <%= f.email_field :email, autofocus: true, placeholder: "PC・携帯どちらでも可" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可" %>
       </div>
       <div class="signup__main__info__pass">
         <%= f.label :パスワード %>
@@ -43,28 +43,30 @@
         <%= f.label :お名前（全角） %>
         <span>必須</span>
         <div class="signup__main__info__name__box">
-          <input class="signup__main__info__name__box__kanji" required="required" placeholder="例）香川" type="text">
-          <input class="signup__main__info__name__box__kanji" required="required" placeholder="例）太郎" type="text">
+          <%= f.text_field :family, autofocus: true, autocomplete: "name", class: "signup__main__info__name__box__kanji", placeholder:"例）香川" %>
+          <%= f.text_field :first, autofocus: true, autocomplete: "name", class: "signup__main__info__name__box__kanji", placeholder: "例）太郎" %>
         </div>
       </div>
       <div class="signup__main__info__name">
         <%= f.label :お名前カナ（全角） %>
         <span>必須</span>
         <div class="signup__main__info__name__box">
-          <input class="signup__main__info__name__box__kanji" required="required" placeholder="例）香川" type="text">
-          <input class="signup__main__info__name__box__kanji" required="required" placeholder="例）太郎" type="text">
+          <%= f.text_field :family_kana, autofocus: true, autocomplete: "name", class: "signup__main__info__name__box__kanji", placeholder: "例）香川" %>
+          <%= f.text_field :first_kana, autofocus: true, autocomplete: "name", class: "signup__main__info__name__box__kanji", placeholder: "例）太郎" %>
         </div>
       </div>
       <div class="signup__main__info__birthday">
         <%= f.label :生年月日 %>
         <span>必須</span>
         <div class="signup__main__info__birthday__detail">
-          <select class="signup__main__info__birthday__detail__year"></select>
+          <%= raw sprintf(f.date_select(:birthday,prompt:"--",start_year:Time.now.year,end_year:Time.now.year-100,use_month_numbers:true, autocomplete: "new-password",date_separator:'%s'),'年','月')+'日' %>
+          <%# <select class="signup__main__info__birthday__detail__year"></select>
           <div class="signup__main__info__birthday__detail__nen">年</div>
           <select class="signup__main__info__birthday__detail__year"></select>
           <div class="signup__main__info__birthday__detail__nen">月</div>
           <select class="signup__main__info__birthday__detail__year"></select>
-          <div class="signup__main__info__birthday__detail__nen">日</div>
+          <div class="signup__main__info__birthday__detail__nen">日</div> %>
+          <%# <% != sprintf(f.date_select(:birthday,prompt:"--",start_year:Time.now.year,end_year:Time.now.year-100,use_month_numbers:true, autocomplete: "new-password",date_separator:'%s'),'年','月')+'日'class="signup__main__info__birthday__detail"> %>
         </div>
         <p class="signup__main__info__birthday__attention">
         ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
@@ -73,36 +75,38 @@
       <h3 class="signup__main__info__deliverytitle">
       配送先住所
       </h3>
-      <div class="signup__main__info__delivery">
-        <%= f.label :郵便番号 %>
-        <span>必須</span>
-        <%= f.email_field :email, autofocus: true, placeholder: "例）760ー0019" %>
-      </div>
-      <div class="signup__main__info__delivery">
-        <%= f.label :都道府県 %>
-        <span>必須</span>
-        <%= f.email_field :email, autofocus: true, placeholder: "選択してください" %>
-      </div>
-      <div class="signup__main__info__delivery">
-        <%= f.label :市区町村 %>
-        <span>必須</span>
-        <%= f.email_field :email, autofocus: true, placeholder: "例）高松市" %>
-      </div>
-      <div class="signup__main__info__delivery">
-        <%= f.label :番地 %>
-        <span>必須</span>
-        <%= f.email_field :email, autofocus: true, placeholder: "例）サンポート2-1" %>
-      </div>
-      <div class="signup__main__info__delivery">
-        <%= f.label :建物名 %>
-        <span>必須</span>
-        <%= f.email_field :email, autofocus: true, placeholder: "例）高松シンボルタワー棟" %>
-      </div>
-      <div class="signup__main__info__delivery">
-        <%= f.label :電話番号 %>
-        <span>必須</span>
-        <%= f.email_field :email, autofocus: true, placeholder: "例）0878220111" %>
-      </div>
+      <%= f.fields_for :address do |m| %>
+        <div class="signup__main__info__delivery">
+          <%= m.label :郵便番号 %>
+          <span>必須</span>
+          <%= m.text_field :post_code, autofocus: true, placeholder: "例）760ー0019" %>
+        </div>
+        <div class="signup__main__info__delivery">
+          <%= m.label :都道府県 %>
+          <span>必須</span>
+          <%= m.collection_select :prefecture_id, Prefecture.all, :id, :name,{include_blank:"選択してください"} %>
+        </div>
+        <div class="signup__main__info__delivery">
+          <%= m.label :市区町村 %>
+          <span>必須</span>
+          <%= m.text_field :city, autofocus: true, placeholder: "例）高松市" %>
+        </div>
+        <div class="signup__main__info__delivery">
+          <%= m.label :番地 %>
+          <span>必須</span>
+          <%= m.text_field :block_number, autofocus: true, placeholder: "例）サンポート2-1" %>
+        </div>
+        <div class="signup__main__info__delivery">
+          <%= m.label :建物名 %>
+          <span>必須</span>
+          <%= m.text_field :building_name, autofocus: true, placeholder: "例）高松シンボルタワー棟" %>
+        </div>
+        <div class="signup__main__info__delivery">
+          <%= m.label :電話番号 %>
+          <span>必須</span>
+          <%= m.text_field :tel, autofocus: true, placeholder: "例）0878220111" %>
+        </div>
+      <% end %> 
       <div class="signup__main__info__submit">
         <%= f.submit "登録する" %>
       </div>

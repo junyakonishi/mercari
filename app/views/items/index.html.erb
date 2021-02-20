@@ -222,268 +222,38 @@
         </a>
       </div>
       <div class="main__fifth__bottom__items">
-        <div class="main__fifth__bottom__items__one">
-          <a href="#"class="main__fifth__bottom__items__one__link">
-            <figure class="main__fifth__bottom__items__one__link__photo">
-              <%= image_tag "商品詳細.png" %>
-            </figure>
-            <div class="main__fifth__bottom__items__one__link__details">
-              <h3 class="main__fifth__bottom__items__one__link__details__title">
-              城
-              </h3>
-              <div class="main__fifth__bottom__items__one__link__details__value">
-                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
-                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
-                  9,999,999円
-                  </li>
-                  <li class="main__fifth__bottom__items__one__link__details__value__count">
-                    <i class="fab fa-apple"></i>
-                    0
-                  </li>
-                </ul>
-                <p class="main__fifth__bottom__items__one__link__details__value__tax">
-                （税込）
-                </p>
+        <% @items.each do |item| %>
+          <div class="main__fifth__bottom__items__one">
+            <%= link_to item_path(item), class: "main__fifth__bottom__items__one__link" do %>
+              <figure class="main__fifth__bottom__items__one__link__photo">
+                <%= image_tag item.image.url %>
+                <div class="main__fifth__bottom__items__one__link__photo__sold">
+                  <span class="main__fifth__bottom__items__one__link__photo__sold__text">SOLD</span>
+                </div>
+              </figure>
+              <div class="main__fifth__bottom__items__one__link__details">
+                <h3 class="main__fifth__bottom__items__one__link__details__title">
+                 <%=item.name %>
+                </h3>
+                <div class="main__fifth__bottom__items__one__link__details__value">
+                  <ul class="main__fifth__bottom__items__one__link__details__value__detail">
+                    <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
+                      <%="#{item.price.to_s(:delimited)}円" %>
+                    </li>
+                    <li class="main__fifth__bottom__items__one__link__details__value__count">
+                      <i class="fab fa-apple"></i>
+                      0
+                    </li>
+                  </ul>
+                  <p class="main__fifth__bottom__items__one__link__details__value__tax">
+                  （税込）
+                  </p>
+                </div>
               </div>
-            </div>
-          </a>
-        </div>
-        <div class="main__fifth__bottom__items__one">
-          <a href="#"class="main__fifth__bottom__items__one__link">
-            <figure class="main__fifth__bottom__items__one__link__photo">
-              <%= image_tag "商品詳細.png" %>
-            </figure>
-            <div class="main__fifth__bottom__items__one__link__details">
-              <h3 class="main__fifth__bottom__items__one__link__details__title">
-              城
-              </h3>
-              <div class="main__fifth__bottom__items__one__link__details__value">
-                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
-                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
-                  9,999,999円
-                  </li>
-                  <li class="main__fifth__bottom__items__one__link__details__value__count">
-                    <i class="fab fa-apple"></i>
-                    0
-                  </li>
-                </ul>
-                <p class="main__fifth__bottom__items__one__link__details__value__tax">
-                （税込）
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="main__fifth__bottom__items__one">
-          <a href="#"class="main__fifth__bottom__items__one__link">
-            <figure class="main__fifth__bottom__items__one__link__photo">
-              <%= image_tag "商品詳細.png" %>
-            </figure>
-            <div class="main__fifth__bottom__items__one__link__details">
-              <h3 class="main__fifth__bottom__items__one__link__details__title">
-              城
-              </h3>
-              <div class="main__fifth__bottom__items__one__link__details__value">
-                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
-                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
-                  9,999,999円
-                  </li>
-                  <li class="main__fifth__bottom__items__one__link__details__value__count">
-                    <i class="fab fa-apple"></i>
-                    0
-                  </li>
-                </ul>
-                <p class="main__fifth__bottom__items__one__link__details__value__tax">
-                （税込）
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="main__fifth__bottom__items__one">
-          <a href="#"class="main__fifth__bottom__items__one__link">
-            <figure class="main__fifth__bottom__items__one__link__photo">
-              <%= image_tag "商品詳細.png" %>
-            </figure>
-            <div class="main__fifth__bottom__items__one__link__details">
-              <h3 class="main__fifth__bottom__items__one__link__details__title">
-              城
-              </h3>
-              <div class="main__fifth__bottom__items__one__link__details__value">
-                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
-                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
-                  9,999,999円
-                  </li>
-                  <li class="main__fifth__bottom__items__one__link__details__value__count">
-                    <i class="fab fa-apple"></i>
-                    0
-                  </li>
-                </ul>
-                <p class="main__fifth__bottom__items__one__link__details__value__tax">
-                （税込）
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="main__fifth__bottom__items__one">
-          <a href="#"class="main__fifth__bottom__items__one__link">
-            <figure class="main__fifth__bottom__items__one__link__photo">
-              <%= image_tag "商品詳細.png" %>
-            </figure>
-            <div class="main__fifth__bottom__items__one__link__details">
-              <h3 class="main__fifth__bottom__items__one__link__details__title">
-              城
-              </h3>
-              <div class="main__fifth__bottom__items__one__link__details__value">
-                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
-                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
-                  9,999,999円
-                  </li>
-                  <li class="main__fifth__bottom__items__one__link__details__value__count">
-                    <i class="fab fa-apple"></i>
-                    0
-                  </li>
-                </ul>
-                <p class="main__fifth__bottom__items__one__link__details__value__tax">
-                （税込）
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="main__fifth__bottom__items__one">
-          <a href="#"class="main__fifth__bottom__items__one__link">
-            <figure class="main__fifth__bottom__items__one__link__photo">
-              <%= image_tag "商品詳細.png" %>
-            </figure>
-            <div class="main__fifth__bottom__items__one__link__details">
-              <h3 class="main__fifth__bottom__items__one__link__details__title">
-              城
-              </h3>
-              <div class="main__fifth__bottom__items__one__link__details__value">
-                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
-                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
-                  9,999,999円
-                  </li>
-                  <li class="main__fifth__bottom__items__one__link__details__value__count">
-                    <i class="fab fa-apple"></i>
-                    0
-                  </li>
-                </ul>
-                <p class="main__fifth__bottom__items__one__link__details__value__tax">
-                （税込）
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="main__fifth__bottom__items__one">
-          <a href="#"class="main__fifth__bottom__items__one__link">
-            <figure class="main__fifth__bottom__items__one__link__photo">
-              <%= image_tag "商品詳細.png" %>
-            </figure>
-            <div class="main__fifth__bottom__items__one__link__details">
-              <h3 class="main__fifth__bottom__items__one__link__details__title">
-              城
-              </h3>
-              <div class="main__fifth__bottom__items__one__link__details__value">
-                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
-                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
-                  9,999,999円
-                  </li>
-                  <li class="main__fifth__bottom__items__one__link__details__value__count">
-                    <i class="fab fa-apple"></i>
-                    0
-                  </li>
-                </ul>
-                <p class="main__fifth__bottom__items__one__link__details__value__tax">
-                （税込）
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="main__fifth__bottom__items__one">
-          <a href="#"class="main__fifth__bottom__items__one__link">
-            <figure class="main__fifth__bottom__items__one__link__photo">
-              <%= image_tag "商品詳細.png" %>
-            </figure>
-            <div class="main__fifth__bottom__items__one__link__details">
-              <h3 class="main__fifth__bottom__items__one__link__details__title">
-              城
-              </h3>
-              <div class="main__fifth__bottom__items__one__link__details__value">
-                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
-                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
-                  9,999,999円
-                  </li>
-                  <li class="main__fifth__bottom__items__one__link__details__value__count">
-                    <i class="fab fa-apple"></i>
-                    0
-                  </li>
-                </ul>
-                <p class="main__fifth__bottom__items__one__link__details__value__tax">
-                （税込）
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="main__fifth__bottom__items__one">
-          <a href="#"class="main__fifth__bottom__items__one__link">
-            <figure class="main__fifth__bottom__items__one__link__photo">
-              <%= image_tag "商品詳細.png" %>
-            </figure>
-            <div class="main__fifth__bottom__items__one__link__details">
-              <h3 class="main__fifth__bottom__items__one__link__details__title">
-              城
-              </h3>
-              <div class="main__fifth__bottom__items__one__link__details__value">
-                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
-                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
-                  9,999,999円
-                  </li>
-                  <li class="main__fifth__bottom__items__one__link__details__value__count">
-                    <i class="fab fa-apple"></i>
-                    0
-                  </li>
-                </ul>
-                <p class="main__fifth__bottom__items__one__link__details__value__tax">
-                （税込）
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="main__fifth__bottom__items__one">
-          <a href="#"class="main__fifth__bottom__items__one__link">
-            <figure class="main__fifth__bottom__items__one__link__photo">
-              <%= image_tag "商品詳細.png" %>
-            </figure>
-            <div class="main__fifth__bottom__items__one__link__details">
-              <h3 class="main__fifth__bottom__items__one__link__details__title">
-              城
-              </h3>
-              <div class="main__fifth__bottom__items__one__link__details__value">
-                <ul class="main__fifth__bottom__items__one__link__details__value__detail">
-                  <li class="main__fifth__bottom__items__one__link__details__value__detail__price">
-                  9,999,999円
-                  </li>
-                  <li class="main__fifth__bottom__items__one__link__details__value__count">
-                    <i class="fab fa-apple"></i>
-                    0
-                  </li>
-                </ul>
-                <p class="main__fifth__bottom__items__one__link__details__value__tax">
-                （税込）
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-      </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>  
     </div>  
   </section>
   
@@ -495,10 +265,11 @@
       <div class="main__sixth__bottom__title">
         <a href="#" class="main__sixth__bottom__title__link">
           <h3 class="main__sixth__bottom__title__link__figure">
-          アーカイバ
+          アーカイブ
           </h3>
         </a>
       </div>
+
       <div class="main__sixth__bottom__items">
         <div class="main__sixth__bottom__items__one">
           <a href="#"class="main__fifth__bottom__items__one__link">

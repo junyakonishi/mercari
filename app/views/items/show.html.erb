@@ -2,46 +2,69 @@
 <div class="base">
   <div class="base__main">
     <div class="base__main__top">
-      <div class="base__main__top__name">テレワーク</div>
+      <div class="base__main__top__name">
+        <%= @item.name %>
+      </div>
+        
       <div class="base__main__top__photo">
         <div class="base__main__top__photo__image">
-          <%= image_tag "商品詳細.png" %>
+          <%= image_tag @item.image.url %>
         </div>
       </div>
       <div class="base__main__top__value">
-        <div class="base__main__top__value__price">¥1,000,000</div>
+        <div class="base__main__top__value__price">
+          <%= "¥#{@item.price}" %>
+        </div>
+          
         <div class="base__main__top__value__tax">(税込) 送料込み</div>
       </div>
       <div class="base__main__top__btn">購入画面へ進む</div>
-      <div class="base__main__top__info">テレワークテレワークテレワークテレワークテレワークテレワークテレワークテレワークテレワークテレワークテレワークテレワークテレワークテレワークテレワーク</div>
+      <div class="base__main__top__info">
+        <%= @item.info %>
+      </div>
+        
       <div class="base__main__top__table">
         <div class="base__main__top__table__box1">
           <div class="base__main__top__table__box1__left">商品者</div>
-          <div class="base__main__top__table__box1__right">太郎メルカリ</div>
+          <div class="base__main__top__table__box1__right">
+            <%= @item.user.nick_name %>
+          </div>
+            
         </div>
         <div class="base__main__top__table__box2">
           <div class="base__main__top__table__box2__left">カテゴリー</div>
-          <div class="base__main__top__table__box2__right">おもちゃ・ホビー・グッズ</div>
+          <div class="base__main__top__table__box2__right">
+            <%= @item.category.name %>
+          </div>
+            
         </div>
-        <div class="base__main__top__table__box3">
+        <%# <div class="base__main__top__table__box3">
           <div class="base__main__top__table__box3__left">ブランド</div>
           <div class="base__main__top__table__box3__right">zoom</div>
-        </div>
+        </div> %>
         <div class="base__main__top__table__box3">
           <div class="base__main__top__table__box3__left">商品の状態</div>
-          <div class="base__main__top__table__box3__right">全体的に状態が悪い</div>
+          <div class="base__main__top__table__box3__right">
+            <%= @item.status.name %>
+          </div>
         </div>
         <div class="base__main__top__table__box3">
           <div class="base__main__top__table__box3__left">送料の負担</div>
-          <div class="base__main__top__table__box3__right">送料込み（出品者負担）</div>
+          <div class="base__main__top__table__box3__right">
+            <%= @item.delivery_fee.name %>
+          </div>
         </div>
         <div class="base__main__top__table__box3">
-          <div class="base__main__top__table__box3__left">配送の方法</div>
-          <div class="base__main__top__table__box3__right">香川県</div>
+          <div class="base__main__top__table__box3__left">発送元の地域</div>
+          <div class="base__main__top__table__box3__right">
+            <%= @item.prefecture.name %>
+          </div>
         </div>
         <div class="base__main__top__table__box3">
           <div class="base__main__top__table__box3__left">発送日の目安</div>
-          <div class="base__main__top__table__box3__right">４〜７日で発送</div>
+          <div class="base__main__top__table__box3__right">
+            <%= @item.delivery_days.name %>
+          </div>
         </div>
       </div>
     </div>

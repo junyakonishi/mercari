@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
   end 
 
   def card_new
-    @years=[]
+    @years=["--"]
     11.times do |index|
       this_year=Date.today.year%100
       @years.push(this_year+index)

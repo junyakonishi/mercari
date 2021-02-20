@@ -10,8 +10,7 @@
             <label for="Cwhole_cardpage_form_detail_info_form1_text">カード番号</label>
             <span class="Cwhole_cardpage_form_detail_info_form1_mark">必須</span>
           </div>
-          <div class="Cwhole_cardpage_form_detail_info_form2">
-          </div>
+          <%= f.text_field :hoge, class:"Cwhole_cardpage_form_detail_info_form2", placeholder:"1234 5678 1234 5678" %>
           <%= image_tag "visa-logo.svg" %>
           <%= image_tag "master-logo.svg" %>
           <%= image_tag "saison-logo.svg" %>
@@ -26,7 +25,7 @@
             <span class="Cwhole_cardpage_form_detail_expire_form3_mark">必須</span>
           </div>
           <div class="Cwhole_cardpage_form_detail_expire_form4">
-            <%= f.select :hoge,["1","2","3","4","5","6","7","8","9","10","11","12"],{},{class:"Cwhole_cardpage_form_detail_expire_form4_month"} %>
+            <%= f.select :hoge,["--","1","2","3","4","5","6","7","8","9","10","11","12"],{},{class:"Cwhole_cardpage_form_detail_expire_form4_month"} %>
             <span class="Cwhole_cardpage_form_detail_expire_form4_text1">月</span>
             <%= f.select :hoge,@years,{},{class:"Cwhole_cardpage_form_detail_expire_form4_year"} %>
             </select>
@@ -45,11 +44,10 @@
               <i class="fas fa-question-circle">
               </i>
             </span>
-            <p>カード裏面の番号とは？</p>
+            <span>カード裏面の番号とは？</span>
           </div>
         </div>
-        <div class="Cwhole_cardpage_form_detail_submit">登録する
-        </div>
+        <%= f.submit "登録する",class:"Cwhole_cardpage_form_detail_submit" %>
         <div class="Cwhole_cardpage_form_detail_return">もどる
         </div> 
       </div>

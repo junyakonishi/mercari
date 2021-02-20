@@ -1,10 +1,13 @@
 class Item < ApplicationRecord
   belongs_to :user
+
   has_one :buy_data
   belongs_to :category
   has_many :comments
   mount_uploader :image, ImageUploader
 
+
+  
 
   with_options presence: true do
     validates :name

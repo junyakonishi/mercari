@@ -22,6 +22,30 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to item_path(@item)
+    else
+      @categories=Category.roots
+      render :edit
+    end
+  end
+
+
+  def destroy
+    item = Item.find(params[:id])
+    if current_user.id == item.user.id
+      item.destroy
+      redirect_to root_path
+    else
+      redirect_to item_path(item.id)
+    end
+  end
+
   def buyconfirm
   end 
 

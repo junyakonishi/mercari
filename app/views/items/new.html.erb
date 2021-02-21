@@ -33,7 +33,7 @@
       <div class="bases__main__third__top">
         <label class="bases__main__third__top__title">カテゴリー</label>
         <span class="bases__main__third__top__mark">必須</span>
-        <%= f.collection_select :category_id, Category.roots, :id, :name,{include_blank: "---"},{class:"bases__main__third__top__text"} %>
+        <%= f.collection_select :category_id, Category.roots, :id, :name,{include_blank: "---"},{class:"bases__main__third__top__text form-pull-down select-category" } %>
       </div>
       <div class="bases__main__third__bottom">
         <label class="bases__main__third__bottom__title">商品の状態</label>

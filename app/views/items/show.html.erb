@@ -18,7 +18,14 @@
           
         <div class="base__main__top__value__tax">(税込) 送料込み</div>
       </div>
-      <div class="base__main__top__btn">購入画面へ進む</div>
+      
+        
+      <% if user_signed_in? && current_user.id == @item.user.id %>
+        <%= link_to '商品を編集する', edit_item_path(@item.id), class:"base__main__top__btn2" %>
+        <%= link_to '商品を削除する', item_path(@item), method: :delete, class:"base__main__top__btn3" %>
+        <% elsif !user_signed_in? || current_user.id != @item.user.id%>
+          <div class="base__main__top__btn1">購入画面へ進む</div>
+       <% end %>
       <div class="base__main__top__info">
         <%= @item.info %>
       </div>

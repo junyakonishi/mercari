@@ -59,7 +59,7 @@
           margin-top: 7px;
         }
       }
-      &__btn {
+      &__btn1 {
         height: 50px;
         margin: 10px 0px;
         background-color: #3CCACE;
@@ -70,6 +70,33 @@
         text-align: center;
         line-height: 48px;
       }
+      &__btn2 {
+        height: 50px;
+        margin: 10px 0px;
+        background-color: #cccccc;
+        border: 1px solid #cccccc;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 48px;
+        text-decoration: none;
+        display: block;
+      }
+      &__btn3 {
+        height: 50px;
+        margin: 10px 0px;
+        background-color: #FF0000;
+        border: 1px solid #FF0000;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 48px;
+        text-decoration: none;
+        display: block;
+      }
+
       &__info {
         height: 81px;
         margin: 0px 0px 30px;

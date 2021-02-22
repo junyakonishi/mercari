@@ -54,11 +54,11 @@
           </a>
         </li>
         <li class="header__base__bottom__right__mypage">
-          <a class="header__base__bottom__right__mypage__title" href="#">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__base__bottom__right__mypage__title" %>
           <span>
               <i class="fas fa-smile"></i>
             </span>
-              <span>マイページ</span>
+              <%# <span>マイページ</span> %>
           </a>
         </li>
       </ul>

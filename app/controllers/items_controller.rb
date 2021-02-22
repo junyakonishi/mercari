@@ -12,6 +12,11 @@ class ItemsController < ApplicationController
     
   end
 
+  def get_category
+    selected_category = Category.find(params[:category_id])
+    @categories=selected_category.children
+  end
+  
   def create
     @item = Item.new(item_params)
     if @item.valid?

@@ -65,5 +65,3 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'seed-fu'
-
-gem 'jquery-rails'

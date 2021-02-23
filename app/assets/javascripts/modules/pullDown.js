@@ -25,7 +25,7 @@ $(function(){
       type: "GET",
       url: "/api/items/category",
       data: {category_id: category_id},
-      dataType: 'jason'
+      dataType: 'json'
     })
     .done(function(categories) {
       if(categories.length==0){
@@ -33,7 +33,8 @@ $(function(){
       }
 
       const select_form=buildForm(categories)
-      const target=$('bases__main__third__top')
+      console.log(select_form)
+      const target=$('.bases__main__third__top')
       target.append(select_form)
 
     })

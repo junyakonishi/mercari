@@ -115,7 +115,7 @@
         } 
       }
       &_middle {
-        background-color: rgb(141, 174, 236);
+        // background-color: rgb(141, 174, 236);
         margin: 40px 0 0;
         width: 700px;
         height: 274px;
@@ -126,15 +126,10 @@
           display: flex;
           font-weight: bold;
           text-align: center;
-          &_tab1 {
+          &_tab {
             width: 350px;
             height: 74px;
             background-color: #fff;
-            line-height: 50px;
-          }
-          &_tab2 {
-            width: 350px;
-            height: 74px;
             line-height: 50px;
           }
         }
@@ -194,3 +189,16 @@
     }    
 }
 
+.Mypages_right_middle_tabs_tab.active {
+  background-color: #CCC;
+  color: #222e3e;
+  border: none;
+}
+
+.Mypages_right_contents_area {
+  display: none;
+}
+.Mypages_right_contents_area.show {
+  display: block;
+  background-color: white;
+}
